@@ -1,0 +1,39 @@
+@import "../../styles/variables.module";
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 160px;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+
+    .list {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      
+      li {
+        a {
+          color: $dark-gray;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .userContainer {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+
+    button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
