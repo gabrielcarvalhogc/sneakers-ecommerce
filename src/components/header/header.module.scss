@@ -4,25 +4,13 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 30px 160px;
+  padding: 30px 140px;
+  position: relative;
 
   .container {
     display: flex;
     flex-direction: row;
     gap: 40px;
-
-    .list {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-      
-      li {
-        a {
-          color: $dark-gray;
-          text-decoration: none;
-        }
-      }
-    }
   }
 
   .userContainer {
@@ -34,6 +22,29 @@
       background-color: transparent;
       border: none;
       cursor: pointer;
+    }
+  }
+
+  .divider {
+    width: 80%;
+    height: 1px;
+    background-color: $gray;
+    position: absolute;
+    bottom: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 20px;
+    max-width: 100%;
+
+    .container {
+      gap: 30px;
+
+      .list {
+        gap: 15px;
+      }
     }
   }
 }

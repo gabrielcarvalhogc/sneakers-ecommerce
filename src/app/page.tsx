@@ -1,9 +1,15 @@
-import styles from './page.module.css'
+import Header from '@/components/header'
+import styles from './page.module.scss'
+import MainPage from '@/components/main'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <h1>Teste</h1>
-    </main>
+    <>
+      <Header />
+      <main className={styles.main}>
+        <MainPage />
+      </main>
+    </>
+
   )
 }
