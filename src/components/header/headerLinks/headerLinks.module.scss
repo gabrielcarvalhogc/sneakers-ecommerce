@@ -23,3 +23,23 @@
     }
   }
 }
+
+@media (max-width: 550px) {
+  .list {
+    flex-direction: column;
+    padding: 15px;
+
+    .active {
+      top: 2px;
+      width: 50%;
+    }
+    li {
+      line-height: 20px;
+      a {
+        color: $black;
+        font-weight: 700;
+        text-decoration: none;
+      }
+    }
+  }
+}
