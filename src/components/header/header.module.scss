@@ -9,8 +9,8 @@
 
   .container {
     display: flex;
-    flex-direction: row;
     gap: 40px;
+    align-items: center;
   }
 
   .userContainer {
@@ -26,11 +26,23 @@
   }
 
   .divider {
-    width: 80%;
+    width: calc(100% - 280px);
     height: 1px;
     background-color: $gray;
     position: absolute;
     bottom: 0px;
+  }
+}
+
+@media (min-width: 551px) and (max-width: 900px) {
+  .header {
+    padding: 20px 10px;
+    .container {
+      gap: 20px;
+    }
+    .divider {
+      width: calc(100% - 20px);
+    }
   }
 }
 
@@ -43,7 +55,7 @@
       justify-content: space-between;
       align-items: center;
 
-      a {
+      .logo {
         position: relative;
         left: 60px;
       }
