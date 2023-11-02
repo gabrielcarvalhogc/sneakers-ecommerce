@@ -36,6 +36,7 @@ export default function Header() {
           width={40}
           height={40}
           alt="Avatar do usuario"
+          priority
         />
       </div>
       <div className={styles.divider}></div>

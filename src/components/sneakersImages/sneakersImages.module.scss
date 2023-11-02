@@ -1,0 +1,22 @@
+@import "../../styles/variables.module";
+
+.container {
+  .imageProduct {
+    border-radius: 16px;
+  }
+
+  div {
+    display: flex;
+    gap: 20px;
+    padding: 20px 10px;
+
+    img {
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .selected {
+      border: 2px solid $orange;
+    }
+  }
+}
