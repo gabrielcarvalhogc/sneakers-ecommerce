@@ -1,8 +1,9 @@
 "use client"
 
 import Image from "next/image";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 import styles from "./sneakersImages.module.scss";
+import { sneakersImagesArray } from "@/utils/sneakersImagesArray";
 
 export function SneakersImages() {
   const [sourceImage, setSourceImage] = useState(String);
@@ -29,15 +30,15 @@ export function SneakersImages() {
         className={styles.imageProduct}
       />
       <div>
-        {[1,2,3,4].map((index: number) => (
+        {sneakersImagesArray.map((item) => (
           <Image
-            key={index}
-            src={`/images/image-product-${index}-thumbnail.jpg`}
+            key={item.index}
+            src={item.thumbnail}
             width={80}
             height={80}
-            alt="Orange shoes"
-            onClick={() => toggleImage(index)}
-            className={isSelectedClass === index ? styles.selected : ""}
+            alt={item.alt}
+            onClick={() => toggleImage(item.index)}
+            className={isSelectedClass === item.index ? styles.selected : ""}
           />
         ))}
       </div>
