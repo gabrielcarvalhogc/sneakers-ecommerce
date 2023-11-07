@@ -17,8 +17,9 @@ describe ("Header", () => {
 
     const logo = screen.getByTestId("logo");
     fireEvent.click(logo);
-    render(<MainPage/>)
-    const mainPageTitle = screen.getByText("Blala")
+    render(<MainPage/>);
+    
+    const mainPageTitle = screen.getByText("Sneaker Company")
     expect(mainPageTitle).toBeInTheDocument();
   })
 })
