@@ -1,7 +1,7 @@
 import Header from "@/components/header"
 import { fireEvent, render, screen } from "@testing-library/react"
 import "@testing-library/jest-dom"
-import MainPage from "@/components/main"
+import MainPage from "@/components/mainPage"
 
 describe ("Header", () => {
   it("should render the logo", () => {
