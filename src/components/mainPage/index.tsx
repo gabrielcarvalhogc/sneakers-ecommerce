@@ -13,8 +13,12 @@ export default function MainPage() {
   };
 
   const handleDecrement = () => {
-    setCount(count - 1);
+    count === 0 ? setCount(count) : setCount(count - 1);
   };
+
+  const handleCart = () => {
+    localStorage.setItem("quantity", JSON.stringify(count));
+  }
 
   return (
     <main className={styles.main}>
@@ -36,7 +40,10 @@ export default function MainPage() {
             <span role="quantity">{count}</span>
             <button onClick={handleIncrement} role="increment">+</button>
           </div>
-          <button>
+          <button 
+            onClick={handleCart} 
+            role="cartButton" 
+            disabled={count === 0 ? true : false}>
             <CartIcon fillColor="#ffffff"/>
             <p>Add to cart</p>
           </button>

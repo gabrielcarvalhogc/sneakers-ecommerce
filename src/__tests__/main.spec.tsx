@@ -51,7 +51,27 @@ describe("main compoment",() => {
     expect(sneakersQuantity).toHaveTextContent("0");
   })
 
-  //não poder ser menor que 0
+  it("quantity value can't be less than zero", () => {
+    render(<MainPage/>)
+
+    const decrementButton = screen.getByRole("decrement");
+    const sneakersQuantity = screen.getByRole("quantity");
+
+    expect(sneakersQuantity).toHaveTextContent("0");
+    fireEvent.click(decrementButton);
+    expect(sneakersQuantity).toHaveTextContent("0");
+  })
+
+  it("quantity is equal to zero add to cart button must be disabled", () => {
+    render(<MainPage/>)
+
+    const sneakersQuantity = screen.getByRole("quantity");
+    const cartButton = screen.getByRole("cartButton");
+
+    expect(sneakersQuantity).toHaveTextContent("0");
+    expect(cartButton).toBeDisabled();
+  })
   //refatorar código
   //fazer testes de adicionar ao carrinho
+  //criar um describe para cada grupo ex: carrinho, quantity, component etc
 })
