@@ -30,7 +30,10 @@ export default function Header() {
         </div>
       </nav>
       <div className={styles.userContainer}>
-        <button><CartIcon /></button>
+        <button>
+          <CartIcon />
+          <span>{localStorage.getItem("quantity")}</span>
+        </button>
         <Image
           src="/images/image-avatar.png"
           width={40}
