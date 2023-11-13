@@ -5,14 +5,21 @@ import { CartIcon } from "../icons/icon-cart";
 import { Logo } from "./logo";
 import styles from "./header.module.scss"
 import { HeaderLinks } from "./headerLinks";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [storageQuantity, setStorageQuantity] = useState("");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    let value
+    value = localStorage.getItem("quantity") || ""
+    setStorageQuantity(value)
+  }, [])
 
   return (
     <header className={styles.header}>
@@ -32,7 +39,7 @@ export default function Header() {
       <div className={styles.userContainer}>
         <button>
           <CartIcon />
-          <span>{localStorage.getItem("quantity")}</span>
+          <span>{storageQuantity}</span>
         </button>
         <Image
           src="/images/image-avatar.png"
