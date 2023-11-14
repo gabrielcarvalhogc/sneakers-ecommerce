@@ -17,24 +17,6 @@
     align-items: center;
     display: flex;
     gap: 20px;
-
-    button {
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-      position: relative;
-
-      span {
-        color: $white;
-        padding: 0 6px;
-        font-size: 12px;
-        background-color: $orange;
-        border-radius: 6px;
-        position: relative;
-        right: 10px;
-        bottom: 16px;
-      }
-    }
   }
 
   .divider {

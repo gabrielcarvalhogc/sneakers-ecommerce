@@ -4,8 +4,10 @@ import { useState } from "react";
 import { SneakersImages } from "../sneakersImages";
 import { CartIcon } from "../icons/icon-cart";
 import styles from "./mainPage.module.scss";
+import { useCart } from "@/contexts/CartContext";
 
 export default function MainPage() {
+  const { addToCart } = useCart();
   const [count, setCount] = useState(Number);
 
   const handleIncrement = () => {
@@ -17,8 +19,8 @@ export default function MainPage() {
   };
 
   const handleCart = () => {
-    localStorage.setItem("quantity", JSON.stringify(count));
-  }
+    addToCart(count);
+  };
 
   return (
     <main className={styles.main}>

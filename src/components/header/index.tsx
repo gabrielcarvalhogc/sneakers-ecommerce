@@ -1,25 +1,18 @@
 "use client"
 
 import Image from "next/image";
-import { CartIcon } from "../icons/icon-cart";
 import { Logo } from "./logo";
 import styles from "./header.module.scss"
 import { HeaderLinks } from "./headerLinks";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Cart } from "../cart";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [storageQuantity, setStorageQuantity] = useState("");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
-  useEffect(() => {
-    let value
-    value = localStorage.getItem("quantity") || ""
-    setStorageQuantity(value)
-  }, [])
 
   return (
     <header className={styles.header}>
@@ -37,10 +30,7 @@ export default function Header() {
         </div>
       </nav>
       <div className={styles.userContainer}>
-        <button>
-          <CartIcon />
-          <span>{storageQuantity}</span>
-        </button>
+      <Cart/>
         <Image
           src="/images/image-avatar.png"
           width={40}
