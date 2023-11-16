@@ -19,7 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={kumbh.className}>{children}</body>
+      <body className={kumbh.className}>
+        {children}
+      </body>
     </html>
   )
 }

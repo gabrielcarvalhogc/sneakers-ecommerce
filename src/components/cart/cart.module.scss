@@ -1,19 +1,64 @@
 @import "../../styles/variables.module";
 
-.button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  position: relative;
+.container {
+  position: inherit;
 
-  span {
-    color: $white;
-    padding: 0 6px;
-    font-size: 12px;
-    background-color: $orange;
-    border-radius: 6px;
+  .button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
     position: relative;
-    right: 10px;
-    bottom: 16px;
+
+    span {
+      color: $white;
+      padding: 0 6px;
+      font-size: 12px;
+      background-color: $orange;
+      border-radius: 6px;
+      position: relative;
+      right: 10px;
+      bottom: 16px;
+    }
+  }
+
+  .cartInfo {
+    margin-top: 15px;
+    right: 90px;
+    width: 270px;
+    height: 170px;
+    box-shadow: 5px 5px 10px $gray;
+    border-radius: 16px;
+    position: absolute;
+    background-color: $white;
+    z-index: 2;
+
+    .title {
+      padding: 10px;
+    }
+
+    .divider {
+      width: 90%;
+      background-color: $gray;
+      height: 1px;
+      margin: 0 auto;
+    }
+
+    .info {
+      display: flex;
+      padding: 10px;
+      align-items: center;
+
+      div {
+        p {
+          font-size: 14px;
+          color: $dark-gray;
+
+          span {
+            color: $black;
+            font-weight: 700;
+          }
+        }
+      }
+    }
   }
 }

@@ -20,6 +20,7 @@ export default function MainPage() {
 
   const handleCart = () => {
     addToCart(count);
+    setCount(0);
   };
 
   return (
