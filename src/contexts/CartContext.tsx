@@ -3,6 +3,7 @@ import React, { ReactNode, createContext, useContext, useEffect, useState } from
 interface CartContextProps {
   cartQuantity: number;
   addToCart: (quantity: number) => void;
+  deleteCart: (quantity: number) => void;
 }
 
 interface ChildrenProps {
@@ -31,9 +32,19 @@ export const CartProvider = ({ children }: ChildrenProps) => {
     });
   };
 
+  const deleteCart = (quantity: number) => {
+    setCartQuantity(() => {
+      if (typeof window !== "undefined") {
+        localStorage.removeItem('cartQuantity');
+      }
+      return quantity;
+    });
+  }
+
   const value: CartContextProps = {
     cartQuantity,
     addToCart,
+    deleteCart,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
@@ -41,5 +52,5 @@ export const CartProvider = ({ children }: ChildrenProps) => {
 
 export const useCart = (): CartContextProps => {
   const context = useContext(CartContext);
-  return context || { cartQuantity: 0, addToCart: () => {} };
+  return context || { cartQuantity: 0, addToCart: () => {}, deleteCart: () => {} };
 };
