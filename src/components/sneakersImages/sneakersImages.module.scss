@@ -22,9 +22,29 @@
   }
 }
 
-.lightbox {
-  cursor: 'pointer';
-  object-fit: 'cover';
-  width: '100%';
-  max-height: '100%';
+@media (min-width: 551px) and (max-width: 900px) {
+  .container {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    margin: 0 auto;
+
+    .imageProduct {
+      height: 250px;
+      width: 250px;
+    }
+
+    div {
+      gap: 7px;
+      padding: 20px 0;
+
+      img {
+        height: 60px;
+        width: 60px;
+      }
+    }
+  }
 }

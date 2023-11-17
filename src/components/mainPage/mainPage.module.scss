@@ -17,7 +17,7 @@
     }
 
     .description {
-      color: $gray;
+      color: $dark-gray;
       font-size: 14px;
     }
 
@@ -59,7 +59,7 @@
         }
 
         span {
-          margin: 0 20px;
+          margin: 0 7px;
         }
       }
 
@@ -73,7 +73,7 @@
         display: flex;
         gap: 10px;
         justify-content: center;
-        width: 150px;
+        width: 130px;
 
         svg {
           fill: #ffffff;
@@ -83,6 +83,36 @@
       > button:disabled {
         cursor: not-allowed;
         opacity: 70%;
+      }
+    }
+  }
+}
+
+@media (min-width: 551px) and (max-width: 900px) {
+  .main {
+    flex-direction: column;
+    padding: 20px 40px;
+
+    .container {
+      gap: 20px;
+
+      .buttonContainer {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .main {
+    flex-direction: column;
+    padding: 20px;
+
+    .container {
+      gap: 20px;
+
+      .buttonContainer {
+        justify-content: center;
       }
     }
   }

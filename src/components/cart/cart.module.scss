@@ -12,24 +12,24 @@
     span {
       color: $white;
       padding: 0 6px;
-      font-size: 12px;
       background-color: $orange;
       border-radius: 6px;
+      bottom: 16px;
+      font-size: 12px;
       position: relative;
       right: 10px;
-      bottom: 16px;
     }
   }
 
   .cartInfo {
+    background-color: $white;
+    border-radius: 16px;
+    box-shadow: 5px 5px 10px $gray;
+    height: 170px;
     margin-top: 15px;
+    position: absolute;
     right: 90px;
     width: 270px;
-    height: 170px;
-    box-shadow: 5px 5px 10px $gray;
-    border-radius: 16px;
-    position: absolute;
-    background-color: $white;
     z-index: 2;
 
     .title {
@@ -37,21 +37,27 @@
     }
 
     .divider {
-      width: 90%;
       background-color: $gray;
       height: 1px;
       margin: 0 auto;
+      width: 90%;
     }
 
     .info {
+      align-items: center;
       display: flex;
       padding: 10px;
-      align-items: center;
+
+      .emptyCart {
+        color: $dark-gray;
+        font-size: 18px;
+        margin: auto;
+      }
 
       div {
         p {
-          font-size: 14px;
           color: $dark-gray;
+          font-size: 14px;
 
           span {
             color: $black;
@@ -59,6 +65,29 @@
           }
         }
       }
+
+      button {
+        background-color: transparent;
+        border: none;
+        padding: 5px;
+      }
+    }
+  }
+}
+
+@media (min-width: 551px) and (max-width: 900px) {
+  .container {
+    .cartInfo {
+      right: 20px;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    .cartInfo {
+      right: 10px;
+      z-index: 0;
     }
   }
 }

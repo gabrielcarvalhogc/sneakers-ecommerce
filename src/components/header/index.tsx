@@ -30,14 +30,7 @@ export default function Header() {
         </div>
       </nav>
       <div className={styles.userContainer}>
-      <Cart/>
-        <Image
-          src="/images/image-avatar.png"
-          width={40}
-          height={40}
-          alt="Avatar do usuario"
-          priority
-        />
+        <Cart/>
       </div>
       <div className={styles.divider}></div>
     </header>

@@ -36,7 +36,7 @@ export function Cart() {
 
           <div className={styles.info}>
             {cartQuantity === 0 
-              ? isOpen && <p>Your cart is empty</p> 
+              ? isOpen && <p className={styles.emptyCart}>Your cart is empty</p> 
               : isOpen &&
                 <div>
                   <Image
